@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yeniser.Analisis"
+             Title="Analisis"
+             BackgroundColor="#e9f8fa"
+             IconImageSource="analysis.png">
+
+    <StackLayout Margin="1,10,1,0">
+        <Grid Margin="0,10,0,10">
+            <Entry Unfocused="Cosechadores_Unfocused" TextChanged="Cosechadores_TextChanged" Placeholder="Cuantos de Cosechadores?" Keyboard="Numeric" ReturnType="Next" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" x:Name="Cosechadores" FontAttributes="Bold"/>
+            <Entry TextChanged="Proceso_TextChanged" Placeholder="Kilogramo de Proceso?" Keyboard="Numeric" ReturnType="Next" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center" x:Name="Proceso" FontAttributes="Bold"/>
+        </Grid>
+        <Label Text="Selecciona los Empaques trabajado:" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20" Background="gray" />
+        <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" Padding="0,0,0,0" Margin="0,0,0,0">
+            <Picker SelectedIndexChanged="Empaque1_SelectedIndexChanged" Grid.Column="0" Grid.Row="0" Title="Empaque:" x:Name="Empaque1" HorizontalTextAlignment="Center"/>
+            <Picker SelectedIndexChanged="Empaque2_SelectedIndexChanged" Grid.Column="1" Grid.Row="0" Title="Empaque:" x:Name="Empaque2" HorizontalTextAlignment="Center"/>
+            <Picker SelectedIndexChanged="Empaque3_SelectedIndexChanged" Grid.Column="2" Grid.Row="0" Title="Empaque:" x:Name="Empaque3" HorizontalTextAlignment="Center"/>
+            <Picker SelectedIndexChanged="Empaque4_SelectedIndexChanged" Grid.Column="3" Grid.Row="0" Title="Empaque:" x:Name="Empaque4" HorizontalTextAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="1" Text="0.0" HorizontalTextAlignment="Center" x:Name="Peso1"/>
+            <Label Grid.Column="1" Grid.Row="1" Text="0.0" HorizontalTextAlignment="Center" x:Name="Peso2"/>
+            <Label Grid.Column="2" Grid.Row="1" Text="0.0" HorizontalTextAlignment="Center" x:Name="Peso3"/>
+            <Label Grid.Column="3" Grid.Row="1" Text="0.0" HorizontalTextAlignment="Center" x:Name="Peso4"/>
+            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" Text="Ingresa la cantidad de Empaques en cada Caja:" Padding="0,10,0,0" FontAttributes="Bold" BackgroundColor=" #63becb "/>
+            <Entry Grid.Column="0" Grid.Row="3" x:Name="Cantidad1" Focused="Cantidad1_Focused" Text="0" Keyboard="Numeric" ReturnType="Next" HorizontalTextAlignment="Center" Placeholder="0" FontAttributes="Bold" TextChanged="Cantidad1_TextChanged"/>
+            <Entry Grid.Column="1" Grid.Row="3" x:Name="Cantidad2" Focused="Cantidad2_Focused" Text="0" Keyboard="Numeric" ReturnType="Next" HorizontalTextAlignment="Center" Placeholder="0" FontAttributes="Bold" TextChanged="Cantidad2_TextChanged"/>
+            <Entry Grid.Column="2" Grid.Row="3" x:Name="Cantidad3" Focused="Cantidad3_Focused" Text="0" Keyboard="Numeric" ReturnType="Next" HorizontalTextAlignment="Center" Placeholder="0" FontAttributes="Bold" TextChanged="Cantidad3_TextChanged"/>
+            <Entry Grid.Column="3" Grid.Row="3" x:Name="Cantidad4" Focused="Cantidad4_Focused" Text="0" Keyboard="Numeric" ReturnType="Next" HorizontalTextAlignment="Center" Placeholder="0" FontAttributes="Bold" TextChanged="Cantidad4_TextChanged"/>
+        </Grid>
+        <Frame Background="#8b9b9d">
+            <Label Text="FRUTA DE PRIMERA:" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+        </Frame>
+        <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*">
+            <Label Grid.Column="0" Grid.Row="0" x:Name="Primera1" HorizontalTextAlignment="Center" Text="0.00" FontAttributes="Bold" FontSize="30" />
+            <Label Grid.Column="1" Grid.Row="0" x:Name="Primera2" HorizontalTextAlignment="Center" Text="0.00" FontAttributes="Bold" FontSize="30"/>
+            <Label Grid.Column="2" Grid.Row="0" x:Name="Primera3" HorizontalTextAlignment="Center" Text="0.00" FontAttributes="Bold" FontSize="30"/>
+            <Label Grid.Column="3" Grid.Row="0" x:Name="Primera4" HorizontalTextAlignment="Center" Text="0.00" FontAttributes="Bold" FontSize="30"/>
+            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Text="Fruta Total de Primera: " FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#c09bc2" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Text="Fruta Total: " FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#c09bc2" FontSize="20"/>
+
+            <Label Grid.Column ="0" Grid.Row ="2" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" Text="0.00 Kg" x:Name="Fruta_Primera" TextColor="HotPink" FontSize="35"/>
+            <Label Grid.Column ="0" Grid.Row ="4" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" Text="0.00 Kg" x:Name="Fruta_Total" TextColor="HotPink" FontSize="35"/>
+        </Grid>
+        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+            <Label Grid.Column="0" Grid.Row="0" Text="Kg x Persona" HorizontalTextAlignment="Center" FontSize="17"/>
+            <Label Grid.Column="1" Grid.Row="0" Text="% Proceso" HorizontalTextAlignment="Center" FontSize="17"/>
+            <Label Grid.Column="2" Grid.Row="0" Text="Precio" HorizontalTextAlignment="Center" FontSize="17"/>
+            <Label Grid.Column="0" Grid.Row="1" Text="0.00 Kg" HorizontalTextAlignment="Center" x:Name="kg_persona" FontAttributes="Bold" FontSize="25"/>
+            <Label Grid.Column="1" Grid.Row="1" Text="0.00 %" HorizontalTextAlignment="Center" x:Name="Porcentaje_Proceso" FontAttributes="Bold" FontSize="25"/>
+            <Label Grid.Column="2" Grid.Row="1" Text="$ 0.00" HorizontalTextAlignment="Center" x:Name="Precio" FontAttributes="Bold" FontSize="25"/>
+        </Grid>
+        <Frame>
+            <Label Text="Diseñado y Programado por Jesus Albeto Developer para Yeniser Linares Medina. Derechos del Autor reservados Hacking Developer S.A de C.V."/>
+        </Frame>
+    </StackLayout>
+</ContentPage>
